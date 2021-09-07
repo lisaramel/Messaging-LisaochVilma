@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My bank</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th> AccountId </th>
+        <th> Timestamp </th>
+        <th> Type </th>
+        <th> Data </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${logs.empty}">
+        <td colspan="2"> No Logs Available </td>
+    </tr>
+    <tr th:each="log : ${logs}">
+        <td><span th:text="${log.accountId}"> AccountId </span></td>
+        <td><span th:text="${log.timestamp}"> Timestamp </span></td>
+        <td><span th:text="${log.type}"> Type </span></td>
+        <td><span th:text="${log.data}"> Data </span></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
