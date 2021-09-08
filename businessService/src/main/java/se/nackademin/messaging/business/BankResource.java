@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HelloResource {
+public class BankResource {
     private final AuditLogger auditLogger;
 
-    public HelloResource(AuditLogger auditLogger) {
+    public BankResource(AuditLogger auditLogger) {
         this.auditLogger = auditLogger;
     }
 

@@ -39,7 +39,7 @@ public class ApplicationConfiguration {
      */
 
     @Bean
-    public AuditLogger paymentNotificationService(RabbitTemplate template) {
+    public AuditLogger auditLogger(RabbitTemplate template) {
         return new AuditLogger(template);
     }
 

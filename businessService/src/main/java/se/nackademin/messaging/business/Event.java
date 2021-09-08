@@ -4,15 +4,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.Instant;
 
-public abstract class AuditEvent {
-    public long getAccountId() {
-        return accountId;
-    }
+public abstract class Event {
 
     enum AuditEventType {
         DEPOSIT,
         OPEN_ACCOUNT
     }
+
     @JsonProperty("type")
     private final String type;
     @JsonProperty("accountId")
@@ -22,7 +20,7 @@ public abstract class AuditEvent {
     @JsonProperty("data")
     private final String data;
 
-    protected AuditEvent(AuditEventType type, long accountId, Instant timestamp, String data) {
+    protected Event(AuditEventType type, long accountId, Instant timestamp, String data) {
         this.type = type.toString();
         this.accountId = accountId;
         this.timestamp = timestamp;

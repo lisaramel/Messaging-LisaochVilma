@@ -2,7 +2,7 @@ package se.nackademin.messaging.business;
 
 import java.time.Instant;
 
-public class DepositEvent extends AuditEvent {
+public class DepositEvent extends Event {
     private DepositEvent(long accountId, String data) {
         super(AuditEventType.DEPOSIT, accountId, Instant.now(), data);
     }
