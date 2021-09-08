@@ -1,4 +1,4 @@
-package se.nackademin.java20.lab1;
+package se.nackademin.messaging.audit;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;

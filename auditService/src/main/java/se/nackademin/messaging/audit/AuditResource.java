@@ -1,4 +1,4 @@
-package se.nackademin.java20.lab1;
+package se.nackademin.messaging.audit;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
