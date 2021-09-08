@@ -20,8 +20,9 @@ public class ApplicationConfiguration {
     Dvs man kan i sitt deploy-skript eller med andra verktyg lägga till sin exchange.
     Vi ska dock göra det i kod för att snabbt komma igång.
 
-    Kolla nedan så finns det en @Bean TopicExchange som idag returnerar null.
-    Det vi behöver göra här är att returnera en TopicExchange så kommer Spring prata med rabbitmq och sätta upp en
+    Kolla nedan så finns det en @Bean FanoutExchange som idag returnerar null.
+    Fanout är en av flera strategier. Men fanout menas att alla Queues som är kopplade till den kommer få samma meddelanden
+    Det vi behöver göra här är att returnera en FanoutExchange så kommer Spring prata med rabbitmq och sätta upp en
     sådan åt oss.
 
     2. Producern måste ha något som kommunicerar med rabbit. Om ni kommer ihåg hur vi gjorde med REST så använde vi en
@@ -30,8 +31,8 @@ public class ApplicationConfiguration {
     Kolla nedan så har vi en @Bean RabbitTemplate som idag returnerar null.
     Se till att den returnerar en RabbitTemplate som är konfigurerad med rätt connectionFactory och message converter.
 
-
     Du vill kunna köra testet nedan	i DemoApplicationTests och få det grönt!
+
     @Test
 	void contextLoads() {
 	}

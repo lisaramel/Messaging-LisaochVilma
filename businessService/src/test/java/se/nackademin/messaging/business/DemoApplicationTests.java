@@ -3,6 +3,7 @@ package se.nackademin.messaging.business;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -20,6 +21,10 @@ import org.testcontainers.containers.RabbitMQContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
+import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -53,6 +58,8 @@ class DemoApplicationTests {
         // TODO: uppfift 2.a
         // Dags att konfa vår miljö, vi har skapat en exchange men vi behöver en queue så vi kan testa mot
         // Skapa en queue och en binding till den exchange vi skapade uppgift 1
+        // Rabbit har ett verktyg som heter RabbitAdmin med bra hjälpmetoder
+        // Tex. rabbitAdmin.declareQueue och rabbitAdmin.declareBinding
 
     }
 
@@ -64,6 +71,16 @@ class DemoApplicationTests {
 		TODO: Uppgift 2.b:
             Consume message från din kö du skapade i before.
             Testet kommer att fallera då vi inte har implemeterat vår producer.
+            rabbitTemplate har precis som vår restTemplate massa bra metoder
+            testa att använda rabbitTemplate.receive(queue-name, 4000);
+            därefter kan du titta på meddelandet genom att köra message.getBody()
+            Avsluta testet med att asserta att body innehåller "OPEN_ACCOUNT"
+
+            assertNotNull(message);
+            assertTrue(new String(message.getBody()).contains("OPEN_ACCOUNT"));
+
+            förhoppningsivs failar testet på att message är null.
+
             Leta efter uppgift 3.
 		 */
 

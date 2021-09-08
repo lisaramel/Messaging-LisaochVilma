@@ -15,10 +15,16 @@ public class AuditLogger {
     public void notify(AuditEvent auditEvent) {
         LOG.info("Sending..");
        /*
-       Uppgift 3:
+       TODO: Uppgift 3:
           Vi är inne i audit loggern. Här är det menat att vi ska skicka iväg ett meddelande!
           Skicka iväg meddelandet med hjälp av rabbitTemplate och se till att testet från
-          uppfigt 2 är grönt!
+          uppgift 2 är grönt!
+
+          I uppgift 1 registerade vi en message converter. Så länge vi har ett jackson-annoterat objekt
+          Så kan vi skicka det rakt av! Det vi behöver berätta för rabbit är vilken exchange vi vill skicka den på
+          Använd samma som ni skapade i uppgift 1
+          En annan sak vi måste tillhandahålla är Routing key, vilket vi kan använda för att routa till rätt kö.
+          I och med att vi använder FanoutExchange kommer den inte att användas dock.
         */
     }
 }
