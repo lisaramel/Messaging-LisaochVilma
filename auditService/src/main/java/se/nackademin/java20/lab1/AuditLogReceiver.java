@@ -16,7 +16,7 @@ public class AuditLogReceiver {
     @RabbitListener(queues = "audit-log")
     public void receiveMessage(AuditEvent event) {
         LOG.info("Received message! {}", event);
-        /* TODO: Uppgift 3: Spara eventet!
+        /* TODO: Uppgift 2: Spara eventet!
             För att lyssna på events räcker det med @RabbitListner!
 
             När vi får in ett event så vill vi spara det i auditLogRepository.

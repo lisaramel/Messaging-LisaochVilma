@@ -20,6 +20,7 @@ public class ApplicationConfiguration {
      Namnet på kön ska vara "audit-log"
 
      Vi behöver öven konfigurera vår rabbitTemplate med rätt conection factory och message converter.
+     Precis så som vi gjorde i andra tjänsten.
 
      */
     @Bean
