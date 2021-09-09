@@ -88,7 +88,7 @@ public class RabbitTest {
     }
 
     @Test
-    void uppgift_3_ta_emot_meddelanden_från_flera_exchanger() {
+    void uppgift_4_ta_emot_meddelanden_från_flera_exchanger() {
         // En kö kan få meddelanden från flera exchanges. Vi ska testa det genom att skapa två exchanges och en kö
         // sen ska vi koppla denna kö till båda exchangesarna. Vi kan nu säkerställa att om jag skickar ett meddelande
         // till vardera exchange så ska jag ha fått bägge på min kö.
